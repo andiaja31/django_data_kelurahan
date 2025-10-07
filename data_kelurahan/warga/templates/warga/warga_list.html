@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Warga</title>
+</head>
+<body>
+    <h1>Daftar Warga</h1>
+    <ul>
+    {% for warga in warga_list %}
+        <li>
+        <a href="{% url 'warga-detail' warga.pk %}">
+            {{ warga.nama_lengkap }}
+        </a>
+        </li>
+    {% empty %}
+        <li>Tidak ada data warga.</li>
+    {% endfor %}
+    </ul>
+
+</body>
+</html>
